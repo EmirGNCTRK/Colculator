@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- <link rel="stylesheet" href="./colculator.css"> -->
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(160, 156, 156);
+}
+.container{
+    position: relative;
+    min-width: 300px;
+    min-height: 400px;
+    background-color: rgb(51, 51, 51);
+    padding: 40px 30px 30px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.calculator{
+    position: relative;
+    display: grid;
+    
+
+}
+.calculator span{
+    color: white;
+    display: grid;
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    padding: 25px;
+}
+
+
+.calculator .value {
+    position: relative;
+    grid-column: span 4;
+    height: 100px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: rgb(57, 109, 46);
+    margin-bottom: 15px ;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px;
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+
+}
+.num{
+    margin: 10px;
+}
+
+.num:hover{
+    background-color: rgb(41, 40, 40) ;
+}
+
+.calculator .clear{
+    grid-column: span 2;
+    width: 90%;
+    background-color: red;
+
+}
+.clear:hover{
+    background-color: rgb(197, 21, 21);
+}
+
+.calculator .plus{
+    grid-area: span 2;
+    height: 90%;
+    
+}
+
+.esittir:hover{
+    background-color: rgb(85, 108, 134);
+}
+
+.calculator .esittir {
+    background-color: rgb(0, 119, 255);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="calculator" name="calc">
+            <input type="text" readonly name="txt" class="value">
+            <span class="num clear" onclick="calc.txt.value=''"><i>C</i></span>
+            <span class="num" onclick="calc.txt.value+='/'"><i>%</i></span>
+            <span class="num" onclick="calc.txt.value+='*'"><i>X</i></span>
+            <span class="num" onclick="calc.txt.value+='7'"><i>7</i></span>
+            <span class="num" onclick="calc.txt.value+='8'"><i>8</i></span>
+            <span class="num" onclick="calc.txt.value+='9'"><i>9</i></span>
+            <span class="num" onclick="calc.txt.value+='-'"><i>-</i></span>
+            <span class="num" onclick="calc.txt.value+='4'"><i>4</i></span>
+            <span class="num" onclick="calc.txt.value+='5'"><i>5</i></span>
+            <span class="num" onclick="calc.txt.value+='6'"><i>6</i></span>
+            <span class="num plus" onclick="calc.txt.value+='+'"><i>+</i></span>
+            <span class="num" onclick="calc.txt.value+='1'"><i>1</i></span>
+            <span class="num" onclick="calc.txt.value+='2'"><i>2</i></span>
+            <span class="num" onclick="calc.txt.value+='3'"><i>3</i></span>
+            <span class="num" onclick="calc.txt.value+='0'"><i>0</i></span>
+            <span class="num" onclick="calc.txt.value+='00'"><i>00</i></span>
+            <span class="num" onclick="calc.txt.value+='.'"><i>.</i></span>
+            
+            <span class="num esittir" onclick="document.calc.txt.value=eval(calc.txt.value)"><i>=</i></span>
+        </form>
+    </div>
+</body>
+</html>
